@@ -1,0 +1,41 @@
+// SELECT col_name1,col_name2,col_name3 FROM table_name
+    SELECT name,password,id  FROM `users`
+
+// SELECT col_name1,col_name2,col_name3 FROM table_name WHERE col_name='value'
+    SELECT * FROM `users` WHERE `role`='admin'
+    SELECT * FROM `users` WHERE `role`='admin' AND name='ali' And col='value'
+    SELECT * FROM `users` WHERE `role`='admin' OR name='ali' OR col='value'
+    SELECT * FROM `users` WHERE name LIKE '%ali%' OR col LIKE '%value%'
+    SELECT * FROM `projects` WHERE p_date BETWEEN '2023-06-2' AND '2023-06-10'
+// Update Row
+    UPDATE table_name Set col1='value' , col2='value' Where col='value'
+    UPDATE projects Set name='new build' , p_date='2023-05-4' Where id=3
+
+
+
+
+CREATE DATABASE databasename;
+
+DROP DATABASE databasename;
+
+CREATE TABLE table_name (
+    column1 datatype  NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    column2 datatype FOREIGN KEY REFERENCES table2(id),
+    column3 datatype DEFAULT 'Sandnes',
+   // PRIMARY KEY (column1),
+    //FOREIGN KEY (column2) REFERENCES table2(id)
+      Age int,
+        CHECK (Age>=18)
+);
+DROP TABLE table_name;
+
+ALTER TABLE table_name
+ADD column_name datatype;
+
+
+CREATE INDEX index_name
+ON table_name (column1, column2, ...);
+
+
+CREATE UNIQUE INDEX index_name
+ON table_name (column1, column2, ...);
