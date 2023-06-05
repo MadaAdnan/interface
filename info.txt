@@ -13,7 +13,56 @@
 
 
 
+    WHERE CustomerName LIKE 'a%' 	Finds any values that starts with "a" // result => ahmad
+    WHERE CustomerName LIKE '%a' 	Finds any values that ends with "a" // result => alaa
+    WHERE CustomerName LIKE '%or%' 	Finds any values that have "or" in any //  position  result more , for, orginal
+    WHERE CustomerName LIKE '_r%' 	Finds any values that have "r" in the second position // result => error ,
+    WHERE CustomerName LIKE 'a__%' 	Finds any values that starts with "a" and are at least 3 characters in length  => ahmad
+    WHERE ContactName LIKE 'a%o' 	Finds any values that starts with "a" and ends with "o"  =>  aliao
 
+
+
+Limit , order By ,  groupBy , SUM , COUNT , AVG , MIN , MAX
+-------------------------------------------------------
+SELECT column_name(s)
+FROM table1
+INNER JOIN table2
+ON table1.column_name = table2.column_name;
+
+
+
+
+SELECT column_name(s)
+FROM table1
+LEFT JOIN table2
+ON table1.column_name = table2.column_name;
+
+
+SELECT column_name(s)
+FROM table1
+RIGHT JOIN table2
+ON table1.column_name = table2.column_name;
+
+SELECT column_name(s)
+FROM table1
+FULL OUTER JOIN table2
+ON table1.column_name = table2.column_name
+WHERE condition;
+
+SELECT column_name(s) FROM table1
+UNION
+SELECT column_name(s) FROM table2;
+
+
+SELECT OrderID, Quantity,
+CASE WHEN Quantity > 35 THEN 'The quantity is greater than 35'
+WHEN Quantity = 35 THEN 'The quantity is 35'
+ELSE 'The quantity is under 30'
+END AS QuantityText
+FROM OrderDetails;
+
+
+---------------------------------------------------------
 CREATE DATABASE databasename;
 
 DROP DATABASE databasename;

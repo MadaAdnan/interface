@@ -24,3 +24,6 @@ print_r($array_lib->getArray());
 /// Static
 $data=ArrayLib::generate(7,true);
 print_r($data);
+
+
+
